@@ -1,6 +1,17 @@
-import '@/styles/globals.css'
-import type { AppProps } from 'next/app'
+import type { AppProps } from "next/app";
+import "../style/global.css";
+import "@fontsource/josefin-sans";
 
-export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+import { scrapeTheme } from "../../theme/scrapeTheme";
+import { ThemeProvider } from "@mui/material";
+import { RecoilRoot } from "recoil";
+
+export default function App({ pageProps, Component }: AppProps) {
+  return (
+    <RecoilRoot>
+      <ThemeProvider theme={scrapeTheme}>
+        <Component {...pageProps} />
+      </ThemeProvider>
+    </RecoilRoot>
+  );
 }
