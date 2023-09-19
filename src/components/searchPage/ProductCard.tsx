@@ -1,5 +1,4 @@
-import { Avatar, Button, Chip, Stack, Typography } from "@mui/material";
-import { Box } from "@mui/system";
+import { Avatar, Button, Chip, Stack, Typography, Box } from "@mui/material";
 import Image from "next/image";
 import React from "react";
 import { productType } from "../../../utils/fetchProducts";

@@ -1,6 +1,5 @@
 import * as cheerio from "cheerio";
 import axios from "axios";
-import fetchReviewPageLink from "./fetchReviewPageLink";
 import { TResultItem } from "../world/customTypes";
 import { nanoid } from "nanoid";
 
@@ -12,7 +11,7 @@ const fetchReviews = async (uriToAllReviews: string) => {
 
     const $ = cheerio.load(docHTML);
 
-    const reviewWrapper = "div.a-section.review.aok-relative";
+    const reviewWrapper = "div.review";
 
     const reviews = [] as TResultItem[];
 
@@ -20,28 +19,29 @@ const fetchReviews = async (uriToAllReviews: string) => {
       const shelf = $(match);
 
       const reviewTitle = shelf
-        .find(".a-size-base.review-title.a-text-bold")
+        .find(
+          "a.a-size-base.a-link-normal.review-title.a-color-base.review-title-content.a-text-bold"
+        )
+        .find("span")
+        .last()
         .text()
         .trim()
-        .replaceAll("\n", "");
-
-      const regexPattern = /\s+/g;
+        .replace(/\n/g, "")
+        .replace(/\s+/g, " ");
 
       const review = shelf
-        .find("span.a-size-base.review-text.review-text-content")
-        .find("span")
+        .find("span.review-text-content")
         .text()
         .trim()
-        .replaceAll(regexPattern, " ");
+        .replace(/\n/g, "")
+        .replace(/\s+/g, " ");
 
       const name = shelf.find("span.a-profile-name").text();
 
-      const reviewDate = shelf
-        .find("span.a-size-base.a-color-secondary.review-date")
-        .text();
+      const reviewDate = shelf.find("span.review-date").text();
 
       const verifiedPurchase =
-        shelf.find(".a-size-mini.a-color-state.a-text-bold").text() !== "";
+        shelf.find("span.a-declarative[data-action='cr-popup']").length > 0;
 
       console.log(verifiedPurchase);
 
@@ -56,8 +56,9 @@ const fetchReviews = async (uriToAllReviews: string) => {
     });
 
     return reviews;
-  } catch (e: any) {
-    return "an error occured";
+  } catch (e) {
+    console.error("An error occurred:", e);
+    return [];
   }
 };
 

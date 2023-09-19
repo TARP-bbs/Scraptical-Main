@@ -1,5 +1,5 @@
-import { Avatar, Divider, Stack, Typography } from "@mui/material";
-import { Box } from "@mui/system";
+import { Avatar, Divider, Stack, Typography, Box } from "@mui/material";
+
 import React from "react";
 import { useRecoilValue } from "recoil";
 import { sentimentalData } from "../../../world/atoms";

@@ -12,23 +12,22 @@ export default async function handler(
     const productPageURi = await fetchReviewPageLink(uri as string);
     const result = await fetchReviews(productPageURi);
 
-    if (result === "an error occured") {
-      throw new Error();
-    }
-
     const reviews = result.map((el) => {
       return el.review;
     });
 
-    const fetchResponse = await fetch("http://127.0.0.1:8000/results", {
-      method: "POST",
-      body: JSON.stringify({
-        reviews: reviews,
-      }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    const fetchResponse = await fetch(
+      "https://scrapticalnlp-harshpareek91.b4a.run/results/",
+      {
+        method: "POST",
+        body: JSON.stringify({
+          reviews: reviews,
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
 
     const analysis = await fetchResponse.json();
 
@@ -37,7 +36,7 @@ export default async function handler(
       error: false,
       fetchAnalysis: analysis,
     });
-  } catch (e: any) {
-    return res.status(404).json({ error: true, message: e.message });
+  } catch (e) {
+    return res.status(404).json({ error: true, message: (e as Error).message });
   }
 }

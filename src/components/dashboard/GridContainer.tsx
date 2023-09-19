@@ -1,5 +1,4 @@
-import { Grid, Typography } from "@mui/material";
-import { Box } from "@mui/system";
+import { Grid, Typography, Box } from "@mui/material";
 import React from "react";
 import AllReviews from "./AllReviews";
 import GridProductDetails from "./GridProductDetails";
@@ -7,10 +6,7 @@ import Overview from "./Overview";
 
 const GridContainer = () => {
   return (
-    <Grid spacing={5} container>
-      <Grid xs={2} item>
-        <GridProductDetails />
-      </Grid>
+    <Grid gap={5} sx={{ px: 8 }} container>
       <Grid xs={5} item>
         <Box
           sx={{
