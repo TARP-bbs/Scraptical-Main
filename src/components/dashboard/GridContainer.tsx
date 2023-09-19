@@ -6,7 +6,10 @@ import Overview from "./Overview";
 
 const GridContainer = () => {
   return (
-    <Grid gap={5} sx={{ px: 8 }} container>
+    <Grid spacing={5} container>
+      <Grid xs={2} item>
+        <GridProductDetails />
+      </Grid>
       <Grid xs={5} item>
         <Box
           sx={{

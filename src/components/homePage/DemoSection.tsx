@@ -1,5 +1,5 @@
 import { Avatar, Button, Chip, Typography } from "@mui/material";
-import { Box, Stack } from "@mui/system";
+import { Box, Stack } from "@mui/material";
 import React from "react";
 import CallMadeIcon from "@mui/icons-material/CallMade";
 import DemoCard from "./DemoCard";

@@ -4,21 +4,22 @@ import OverViewSkeleton from "./OverViewSkeleton";
 
 const MainSkeleton = () => {
   return (
-    <Grid gap={5} sx={{ px: 8 }} container>
-      <Grid gap={5} sx={{ px: 8 }} container>
-        <Grid xs={5} item>
-          <Box
-            sx={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              height: "100vh",
-            }}
-          >
-            <OverViewSkeleton />
-          </Box>
-        </Grid>
-        <Grid xs={5} item></Grid>
+    <Grid spacing={5} container>
+      <Grid xs={2} item></Grid>
+      <Grid xs={5} item>
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            height: "100vh",
+          }}
+        >
+          <OverViewSkeleton />
+        </Box>
+      </Grid>
+      <Grid xs={5} item>
+        <Box></Box>
       </Grid>
     </Grid>
   );

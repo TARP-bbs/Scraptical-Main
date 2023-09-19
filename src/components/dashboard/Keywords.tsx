@@ -5,8 +5,8 @@ import {
   StepLabel,
   Stepper,
   Typography,
+  Box,
 } from "@mui/material";
-import { Box } from "@mui/system";
 import React from "react";
 
 const Keywords = ({ keywords }: { keywords: string[] }) => {

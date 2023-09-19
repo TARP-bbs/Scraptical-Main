@@ -1,6 +1,4 @@
-import { Avatar, Typography } from "@mui/material";
-import { Box, Stack } from "@mui/system";
-import PendingIcon from "@mui/icons-material/Pending";
+import { Avatar, Typography, Box, Stack } from "@mui/material";
 import React from "react";
 
 const LearningBlock = ({

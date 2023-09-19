@@ -1,5 +1,4 @@
-import { Input } from "@mui/material";
-import { Box, Stack } from "@mui/system";
+import { Input, Box, Stack } from "@mui/material";
 import React from "react";
 
 const SearchKeywords = () => {

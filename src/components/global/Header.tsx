@@ -23,6 +23,12 @@ const Header = () => {
             variant="text"
             startIcon={<GitHubIcon />}
             size="medium"
+            onClick={() => {
+              window.open(
+                "https://github.com/TARP-bbs/Scraptical-Main",
+                "_blank"
+              );
+            }}
           >
             Github
           </Button>

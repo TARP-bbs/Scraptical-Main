@@ -1,6 +1,6 @@
 import { Typography } from "@mui/material";
-import { Tab, Tabs } from "@mui/material";
-import { Box } from "@mui/system";
+import { Tab, Tabs, Box } from "@mui/material";
+
 import React from "react";
 import Entities from "./Entities";
 import Keywords from "./Keywords";

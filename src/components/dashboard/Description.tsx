@@ -1,5 +1,4 @@
-import { Button, Stack, Typography } from "@mui/material";
-import { Box } from "@mui/system";
+import { Button, Stack, Typography, Box } from "@mui/material";
 import React, { useState } from "react";
 
 const Description = ({ review }: { review: string }) => {
