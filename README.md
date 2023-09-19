@@ -1,5 +1,7 @@
 # Scraptical-Main
 
+[https://scraptical-main.vercel.app/](https://scraptical-main.vercel.app/)
+
 TARP Project
 
 Our project is focused on developing a cutting-edge web scraping application capable of extracting and analyzing sentiment data from vast volumes of product reviews on Amazon. Our goal is to categorize each review as positive, negative, or neutral, using sophisticated algorithms that take into account various factors such as language used, length of the review, and frequency of certain keywords.
